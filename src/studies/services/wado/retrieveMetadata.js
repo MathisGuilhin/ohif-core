@@ -164,7 +164,8 @@ function getPaletteColor(server, instance, tag, lutDescriptor) {
     return byteArray[position] + byteArray[position + 1] * 256
   }
 
-  const arrayBufferToPaletteColorLUT = arraybuffer => {
+  const arrayBufferToPaletteColorLUT = result => {
+    const arraybuffer = result[0]
     const byteArray = new Uint8Array(arraybuffer)
     const lut = []
 
