@@ -13,6 +13,7 @@ export default function(element) {
   // Get seriesInstanceUid
   const series = cornerstone.metaData.get('series', imageId);
   const seriesInstanceUid = series.seriesInstanceUid;
+  const numImages = series.numImages;
 
   // Get sopInstanceUid
   const sopInstance = cornerstone.metaData.get('instance', imageId);
@@ -24,6 +25,7 @@ export default function(element) {
     seriesInstanceUid,
     sopInstanceUid,
     frameIndex,
+    numImages,
   ].join('_');
 
   return {
@@ -33,5 +35,6 @@ export default function(element) {
     sopInstanceUid,
     frameIndex,
     imagePath,
+    numImages,
   };
 }
