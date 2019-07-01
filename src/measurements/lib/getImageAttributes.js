@@ -17,7 +17,7 @@ export default function(element) {
   // Get sopInstanceUid
   const sopInstance = cornerstone.metaData.get('instance', imageId);
   const sopInstanceUid = sopInstance.sopInstanceUid;
-  const frameIndex = sopInstance.frame || 0;
+  const frameIndex = sopInstance.instanceNumber || 0;
 
   const imagePath = [
     studyInstanceUid,
