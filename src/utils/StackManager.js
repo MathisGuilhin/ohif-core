@@ -30,7 +30,6 @@ function createAndAddStack(
   const numImages = images.length;
   const imageIds = [];
   let imageId;
-  let i = 1;
 
   displaySet.images.forEach((instance, imageIndex) => {
     const image = instance.getData();
@@ -42,13 +41,14 @@ function createAndAddStack(
       imageIndex: imageIndex + 1,
     };
 
-    const numberOfFrames = numImages;
+    const numberOfFrames = image.numberOfFrames;
     if (numberOfFrames > 1) {
-      metaData.frameNumber = i;
-      imageId = getImageId(image, i);
-      imageIds.push(imageId);
-      metadataProvider.addMetadata(imageId, metaData);
-      i++;
+      for (let i = 0; i < numberOfFrames; i++) {
+        metaData.frameNumber = i;
+        imageId = getImageId(image, i);
+        imageIds.push(imageId);
+        metadataProvider.addMetadata(imageId, metaData);
+      }
     } else {
       metaData.frameNumber = 1;
       imageId = getImageId(image);
