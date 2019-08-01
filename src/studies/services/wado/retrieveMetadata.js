@@ -460,6 +460,7 @@ async function RetrieveMetadata(server, studyInstanceUid) {
     headers: DICOMWeb.getAuthorizationHeader(server),
   };
   const dicomWeb = new api.DICOMwebClient(config);
+
   const options = {
     studyInstanceUID: studyInstanceUid,
   };
