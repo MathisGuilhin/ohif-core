@@ -42,7 +42,7 @@ function getQIDOQueryParams(filter, serverSupportsQIDOIncludeField) {
     ModalitiesInStudy: filter.modalitiesInStudy,
     limit: filter.limit,
     offset: filter.offset,
-    includefield: serverSupportsQIDOIncludeField ? commaSeparatedFields : 'all',
+    //includefield: serverSupportsQIDOIncludeField ? commaSeparatedFields : 'all',
   };
 
   // build the StudyDate range parameter

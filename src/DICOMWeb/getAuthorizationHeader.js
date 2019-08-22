@@ -11,6 +11,8 @@ import user from '../user';
 export default function getAuthorizationHeader(server) {
   const headers = {};
 
+  headers.Accept = `application/json`;
+
   // Check for OHIF.user since this can also be run on the server
   const accessToken = user && user.getAccessToken && user.getAccessToken();
 
